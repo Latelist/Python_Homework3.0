@@ -1,0 +1,29 @@
+# Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу между 
+# максимальным и минимальным значением дробной части элементов.
+# Пример:
+# - [1.1, 1.2, 3.1, 10.01] => 0.19
+
+def leave_fractial(list):
+    for i in range(len(list)):
+        list[i] = round(list[i]%1, 2)
+    return list
+
+def find_difference(list):
+    max = list[0]
+    min = list[0]
+    for i in list:
+        if i > max:
+            max = i
+        elif i < min:
+            min = i
+
+    result = max - min
+    return result
+
+list = [1.1, 1.2, 3.1, 10.01]
+
+leave_fractial(list)
+
+print(find_difference(list))
+
+
